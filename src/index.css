@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: AdirRegular;
+    src: url(assets/adirRegular.otf);
+}
+
+* {
+    font-family: AdirRegular;
+    user-select: none;
+}
+
+button:focus, a:focus {
+    -webkit-tap-highlight-color: transparent;
+}
