@@ -12,6 +12,7 @@ import shi3ar from "./assets/shi3ar_kashaf.png"
 import Contact from './Contact'
 import { motion } from "framer-motion"
 
+
 const navigation = [
   { name: 'الصفحة الرئيسية', href: 'part1' },
   { name: 'الصور', href: 'part2' },
@@ -219,7 +220,6 @@ export default function Home() {
       >
         <Contact />
       </div>
-        
       
     </motion.div>
   )

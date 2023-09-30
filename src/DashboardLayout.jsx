@@ -4,6 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import LogoNasmou from "./assets/logo_marhale.png"
 import { useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -59,9 +60,10 @@ export default function DashboardLayout({ children, isCurrent, setIsCurrent }) {
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
                         {navigation.map((item) => (
-                          <a
+                          <Link
                             key={item.name}
-                            href={item.href}
+                            to={item.href}
+                            onClick={() => setIsCurrent(item.id)}
                             className={classNames(
                               item.current
                                 ? 'bg-gray-900 text-white'
@@ -71,7 +73,7 @@ export default function DashboardLayout({ children, isCurrent, setIsCurrent }) {
                             aria-current={item.current ? 'page' : undefined}
                           >
                             {item.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>

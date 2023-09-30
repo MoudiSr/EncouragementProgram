@@ -1,7 +1,7 @@
 import React from "react"
 import DashboardLayout from "./DashboardLayout"
 
-const Hodour = ({isCurrent, setIsCurrent}) => {
+const Hodour = ({ isCurrent, setIsCurrent }) => {
     return (
         <>
             <DashboardLayout isCurrent={isCurrent} setIsCurrent={setIsCurrent}>

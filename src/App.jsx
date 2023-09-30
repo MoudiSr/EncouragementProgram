@@ -7,7 +7,7 @@ import Hodour from "./Hodour"
 
 function App() {
   const [account, setAccount] = React.useState(JSON.parse(localStorage.getItem("account")))
-  const [isCurrent, setIsCurrent] = React.useState(1)
+  let [isCurrent, setIsCurrent] = React.useState(1)
 
   return (
     <BrowserRouter>
