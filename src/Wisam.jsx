@@ -12,7 +12,7 @@ const Wisam = ({img}) => {
 
     return (
         <motion.div 
-            className="w-32" 
+            className="w-40" 
             onHoverStart={handleHover}
             onHoverEnd={handleUnhover}
             onTap={handleClick}
