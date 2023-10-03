@@ -11,7 +11,7 @@ import { Link } from "react-scroll"
 import shi3ar from "./assets/shi3ar_kashaf.png"
 import Contact from './Contact'
 import { motion } from "framer-motion"
-
+import Statistics from "./Statistics" 
 
 const navigation = [
   { name: 'الصفحة الرئيسية', href: 'part1' },
@@ -26,6 +26,8 @@ const slides = [
   pic3,
   pic4,
 ]
+
+
 
 
 
@@ -210,6 +212,7 @@ export default function Home() {
       >
         <div className="text-right">
             <h1 className="text-4xl m-2 mb-10 tracking-tight text-gray-900 sm:text-6xl">إحصائيات#</h1>
+            <Statistics />
         </div>
       </div>
 
