@@ -30,11 +30,11 @@ export default function DashboardLayout({ children, isCurrent, setIsCurrent }) {
   ]
 
   const userNavigation = [
-    { name: 'تسجيل خروج', href: '#' },
+    { name: 'تسجيل خروج', href: '/' },
   ]
 
   const signOut = () => {
-    localStorage.removeItem("account")
+    navigate("/")
   }
   return account !== null ? (
     <>

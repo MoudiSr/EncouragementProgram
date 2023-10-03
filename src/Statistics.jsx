@@ -44,10 +44,10 @@ ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale,
 const Statistics = () => {
     return (
         <div className="flex flex-wrap justify-center items-center">
-            <div className="border-2 p-6 m-2 rounded-md flex justify-center items-center border-gray-300 w-[40rem] h-[50rem] md:w-[60rem]">
+            <div className="border-2 p-6 m-2 rounded-md flex justify-center items-center border-gray-300 w-full h-auto lg:w-[60rem]">
                 <Pie data={data} />
             </div>
-            <div className="border-2 p-6 m-2 rounded-md flex justify-center items-center border-gray-300 w-[40rem] md:w-[60rem] h-[50rem]">
+            <div className="border-2 p-6 m-2 rounded-md flex justify-center items-center border-gray-300 w-full lg:w-[60rem] h-auto">
                 <Line data={data1}/>
             </div>
         </div>
