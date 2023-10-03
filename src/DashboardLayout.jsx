@@ -25,7 +25,7 @@ export default function DashboardLayout({ children, isCurrent, setIsCurrent }) {
   const navigation = [
     { id: 1, name: 'الصفحة الرئيسية', href: '/dashboard', current: isCurrent === 1 ? true : false },
     { id: 2, name: 'الحضور', href: '/dashboard/1', current: isCurrent === 2 ? true : false },
-    { id: 3, name: 'المطالب والأوسمة', href: '#', current: isCurrent === 3 ? true : false },
+    { id: 3, name: 'المطالب والأوسمة', href: '/dashboard/2', current: isCurrent === 3 ? true : false },
     { id: 4, name: 'السلوكيات', href: '#', current: isCurrent === 4 ? true : false },
   ]
 
