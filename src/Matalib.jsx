@@ -18,7 +18,7 @@ const Matalib = () => {
             <div>
                 <div id="awsime" className="grid border-2 border-gray-100 bg-gray-50 rounded-xl w-full p-2">
                     <h1 className="m-auto text-4xl p-2 ">الأوسمة</h1>
-                    <div className="flex flex-wrap">
+                    <div className="flex flex-wrap justify-center items-center">
                         {images}
                     </div>
                 </div>
