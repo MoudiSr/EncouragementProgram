@@ -5,6 +5,7 @@ import Login from "./Login"
 import Dashboard from "./Dashboard"
 import Hodour from "./Hodour"
 import Matalib from "./Matalib"
+import BehaivorsPage from "./BehaivorsPage"
 
 function App() {
   const [account, setAccount] = React.useState(JSON.parse(localStorage.getItem("account")))
@@ -17,6 +18,7 @@ function App() {
         <Route path="/login" element={<Login setAccount={setAccount} account={account} />}/>
         <Route path="/dashboard" element={<Dashboard account={account} isCurrent={isCurrent} setIsCurrent={setIsCurrent} />}/>
         <Route path="/dashboard/2" element={<Matalib />} />
+        <Route path="/dashboard/3" element={<BehaivorsPage />} />
         <Route path="/dashboard/1" element={<Hodour account={account} isCurrent={isCurrent} setIsCurrent={setIsCurrent} />}/>
       </Routes>
     </BrowserRouter>

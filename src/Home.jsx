@@ -161,7 +161,11 @@ export default function Home() {
         </div>
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div>
-            <img src={shi3ar} className="h-48 m-auto" />
+            <motion.img src={shi3ar} className="h-48 m-auto"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1 }}
+            />
           </div>
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3 py-1 text-sm leading-6 bg-[#128b49] text-white ring-1 ring-gray-900/10 hover:ring-gray-900">

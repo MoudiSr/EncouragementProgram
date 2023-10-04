@@ -26,7 +26,7 @@ export default function DashboardLayout({ children, isCurrent, setIsCurrent }) {
     { id: 1, name: 'الصفحة الرئيسية', href: '/dashboard', current: isCurrent === 1 ? true : false },
     { id: 2, name: 'الحضور', href: '/dashboard/1', current: isCurrent === 2 ? true : false },
     { id: 3, name: 'المطالب والأوسمة', href: '/dashboard/2', current: isCurrent === 3 ? true : false },
-    { id: 4, name: 'السلوكيات', href: '#', current: isCurrent === 4 ? true : false },
+    { id: 4, name: 'السلوكيات', href: '/dashboard/3', current: isCurrent === 4 ? true : false },
   ]
 
   const userNavigation = [
@@ -197,7 +197,7 @@ export default function DashboardLayout({ children, isCurrent, setIsCurrent }) {
 
         <header className="bg-white shadow">
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900">{"ملفي الشخصي".split("").map((letter, key) => <span key={key} className="hover:text-5xl hover:text-green-500">{letter}</span>)}</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-gray-900">{"ملفي الشخصي".split("").map((letter, key) => <span key={key} className="hover:text-5xl hover:text-[#00a88e]">{letter}</span>)}</h1>
           </div>
         </header>
         <main>
