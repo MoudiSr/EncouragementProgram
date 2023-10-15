@@ -29,35 +29,35 @@ import Wisam from "./Wisam";
 
 const Matalib = () => {
     const data = [
-        {img: img1, name: "حامل القرآن"}, 
-        {img: img2, name: "المصلي"}, 
-        {img: img3, name: "ناصر الحسين"},
-        {img: img4, name: "عاشق المهدي"},
-        {img: img5, name: "خادم المسجد"},
-        {img: img6, name: "راكب الدراجة"},
-        {img: img7, name: "الرياضي"},
-        {img: img8, name: "السباح"},
-        {img: img9, name: "المستكشف"},
-        {img: img10, name: "الفلكي"},
-        {img: img11, name: "الحاسوبي"},
-        {img: img12, name: "الممثل"},
-        {img: img13, name: "الرسام"},
-        {img: img14, name: "المنشد"},
-        {img: img15, name: "المصور"},
-        {img: img16, name: "الطاهي"},
-        {img: img17, name: "العقاد"},
-        {img: img18, name: "المطالع"},
-        {img: img19, name: "الرادود الحسيني"},
-        {img: img20, name: "الإلقاء"},
-        {img: img21, name: "المواطن الصالح"},
-        {img: img22, name: "الفتى المقاوم"},
-        {img: img23, name: "الخلوق"},
-        {img: img24, name: "البيئي"},
-        {img: img25, name: "المسعف"},
+        {img: img1, name: "حامل القرآن", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]}, 
+        {img: img2, name: "المصلي", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]}, 
+        {img: img3, name: "ناصر الحسين", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img4, name: "عاشق المهدي", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img5, name: "خادم المسجد", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img6, name: "راكب الدراجة", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img7, name: "الرياضي", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img8, name: "السباح", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img9, name: "المستكشف", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img10, name: "الفلكي", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img11, name: "الحاسوبي", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img12, name: "الممثل", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img13, name: "الرسام", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img14, name: "المنشد", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img15, name: "المصور", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img16, name: "الطاهي", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img17, name: "العقاد", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img18, name: "المطالع", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img19, name: "الرادود الحسيني", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img20, name: "الإلقاء", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img21, name: "المواطن الصالح", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img22, name: "الفتى المقاوم", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img23, name: "الخلوق", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img24, name: "البيئي", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
+        {img: img25, name: "المسعف", requirements: ["يواظب على تلاوة القران", "يحفظ القرآن الكريم",]},
     ]
     const images = []
 
-    data.map((d, key) => images.push(<Wisam key={key} img={d.img} name={d.name} />))
+    data.map((d, key) => images.push(<Wisam key={key} img={d.img} name={d.name} requirements={d.requirements} />))
 
 
 
@@ -66,7 +66,7 @@ const Matalib = () => {
             <div>
                 <div id="awsime" className="grid border-2 border-gray-100 bg-gray-50 rounded-xl w-full p-2">
                     <h1 className="m-auto text-4xl p-4">
-                        {"الأوسمة".split("").map((letter, key) => <span key={key} className="hover:text-5xl hover:text-[#00a88e]">{letter}</span>)}
+                        الأوسمة
                     </h1>
                     <div className="flex flex-wrap justify-center items-center">
                         {images}

@@ -12,6 +12,7 @@ import shi3ar from "./assets/shi3ar_kashaf.png"
 import Contact from './Contact'
 import { motion } from "framer-motion"
 import Statistics from "./Statistics" 
+import Chart from "react-apexcharts";
 
 const navigation = [
   { name: 'الصفحة الرئيسية', href: 'part1' },
@@ -216,7 +217,11 @@ export default function Home() {
       >
         <div className="text-right">
             <h1 className="text-4xl m-2 mb-10 tracking-tight text-gray-900 sm:text-6xl">إحصائيات#</h1>
-            <Statistics />
+          
+              <div className='m-auto w-full md:w-[50%]'>
+                <Statistics />
+              </div>
+           
         </div>
       </div>
 
