@@ -19,7 +19,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard account={account} isCurrent={isCurrent} setIsCurrent={setIsCurrent} />}/>
         <Route path="/dashboard/2" element={<Matalib />} />
         <Route path="/dashboard/3" element={<BehaivorsPage />} />
-        <Route path="/dashboard/1" element={<Hodour account={account} isCurrent={isCurrent} setIsCurrent={setIsCurrent} />}/>
+        <Route path="/dashboard/1" element={<Hodour />}/>
       </Routes>
     </BrowserRouter>
   )

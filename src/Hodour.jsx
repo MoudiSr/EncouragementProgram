@@ -1,58 +1,60 @@
-import React from "react"
 import DashboardLayout from "./DashboardLayout"
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+import { Calendar, momentLocalizer } from 'react-big-calendar'
+import moment from 'moment'
+import {useState} from "react" // Import the Arabic locale
 
-const Hodour = ({ isCurrent, setIsCurrent }) => {
+const messages = {
+    allDay: 'كل اليوم',
+    previous: 'السابق',
+    next: 'التالي',
+    today: 'اليوم',
+    month: 'شهر',
+    week: 'أسبوع',
+    day: 'يوم',
+    agenda: 'جدول',
+    date: 'تاريخ',
+    time: 'وقت',
+    event: 'حدث',
+    months: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'],
+    days: ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+    showMore: total => `+${total} المزيد`
+  };
+
+  const localizer = momentLocalizer(moment);
+
+const Hodour = () => {
+    const [events, setEvents] = useState([ // Initialize events with an empty array
+    {
+        title: 'Event 1',
+        start: new Date(2023, 10, 20, 10, 0),
+        end: new Date(2023, 10, 20, 12, 0)
+    },
+    {
+        title: 'Event 2',
+        start: new Date(2023, 10, 21, 14, 0),
+        end: new Date(2023, 10, 21, 16, 0)
+    },
+    // Add more events as needed
+]);
+
+
+   
+
     return (
-        <>
-            <DashboardLayout isCurrent={isCurrent} setIsCurrent={setIsCurrent}>
-                
-                <div class="relative overflow-x-auto">
-                    <table class="w-full text-sm text-left text-gray-500 ">
-                        <thead class="text-xs text-gray-700 uppercase bg-[#E9E9E9]">
-                            <tr>
-                                <th scope="col" class="px-6 py-3">
-                                    الـنـشــاط
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    التــاريخ
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    المطــالـب
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    كـنـتُ مشــاركاً
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    مـلاحـظـات
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="bg-white border-b">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                    فوتبول
-                                </th>
-                                <td class="px-6 py-4">
-                                    2023-9-24
-                                </td>
-                                <td class="px-6 py-4">
-                                    0
-                                </td>
-                                <td class="px-6 py-4">
-                                    نعم
-                                </td>
-                                <td class="px-6 py-4">
-                                    ملك الانضباط
-                                </td>
-                            </tr>
-                            
-                        </tbody>
-                    </table>
-                </div>
-
-            </DashboardLayout>
-        </>
-    )
+        <DashboardLayout>
+            <h1 className="text-right text-2xl">الحضور</h1>
+            <Calendar
+                popup
+                selectable
+                localizer={localizer}
+                messages={messages}
+                rtl={true}
+                style={{ height: 600, marginTop: '1rem' }}
+                events={events}
+            />
+        </DashboardLayout>
+    );
 }
 
-export default Hodour
+export default Hodour;

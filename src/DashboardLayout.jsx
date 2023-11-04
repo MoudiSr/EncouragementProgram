@@ -1,4 +1,4 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import LogoNasmou from "./assets/logo_marhale.png"
@@ -22,12 +22,12 @@ export default function DashboardLayout({ children, isCurrent, setIsCurrent }) {
           'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   }
 
-  const navigation = [
+  const [navigation, setNavigation] = useState([
     { id: 1, name: 'الصفحة الرئيسية', href: '/dashboard', current: isCurrent === 1 ? true : false },
     { id: 2, name: 'الحضور', href: '/dashboard/1', current: isCurrent === 2 ? true : false },
     { id: 3, name: 'المطالب والأوسمة', href: '/dashboard/2', current: isCurrent === 3 ? true : false },
     { id: 4, name: 'السلوكيات', href: '/dashboard/3', current: isCurrent === 4 ? true : false },
-  ]
+  ])
 
   const userNavigation = [
     { name: 'تسجيل خروج', href: '/' },
@@ -36,6 +36,11 @@ export default function DashboardLayout({ children, isCurrent, setIsCurrent }) {
   const signOut = () => {
     navigate("/")
   }
+
+  useEffect(() => {
+    setNavigation([...navigation])
+  }, [isCurrent])
+
   return account !== null ? (
     <>
       <motion.div 
